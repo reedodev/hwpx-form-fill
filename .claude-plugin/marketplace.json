@@ -1,0 +1,21 @@
+{
+  "name": "hwpx-form-fill",
+  "owner": {
+    "name": "Reedo"
+  },
+  "metadata": {
+    "description": "Fill Hangul (HWPX) form tables by label without Hancom Office, refuse to overwrite filled cells, re-open the file to verify, and fail loudly on missing or ambiguous labels.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "hwpx-form-fill",
+      "description": "Fill Hangul (HWPX) form tables by label without Hancom Office, refuse to overwrite filled cells, re-open the file to verify, and fail loudly on missing or ambiguous labels.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/hwpx-form-fill"
+      ]
+    }
+  ]
+}
