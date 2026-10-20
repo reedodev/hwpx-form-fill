@@ -13,6 +13,27 @@ pip install python-hwpx
 ```
 `.hwp`(옛 바이너리 형식)만 있다면 먼저 [hwp2hwpx](https://github.com/neolord0/hwp2hwpx)로 `.hwpx`로 바꿉니다.
 
+<!-- prereq-adapt -->
+## 준비물 (쓰기 전에 있어야 하는 것)
+| 준비물 | 어디에 쓰나요 | 꼭 필요한가요 |
+|---|---|---|
+| Python 3.10 이상과 `pip install python-hwpx` | HWPX 읽기·쓰기 | 필수 |
+| 채울 양식 파일(.hwpx) | .hwp만 있으면 먼저 hwp2hwpx로 바꿉니다 | 필수 |
+| 채울 값(`values.json`) | 사용자가 준 실제 값만 씁니다 | 필수 |
+| LibreOffice + H2Orestart | PDF로 바꿔 쪽마다 눈으로 확인 | 권장(마지막 확인용) |
+
+## 바꿔 쓰기: 이렇게 말하세요
+에이전트에게 왼쪽처럼 말하면 오른쪽을 바꿔서 실행합니다.
+
+| 이렇게 말하면 | 바뀌는 것 |
+|---|---|
+| "라벨 아래 칸에 넣어 줘" | `values.json`에서 `"신청 동기@below": "..."` |
+| "같은 라벨이 두 개라 헷갈려" | `inspect`로 위치를 보고 `"#0:5,1": "..."`(표 0번, 5행 1열)로 직접 지정 |
+| "이미 적힌 칸도 덮어써 줘" | `--force` (사용자가 분명히 원할 때만) |
+| "칸 위치만 먼저 보여 줘" | `python scripts/hwpx_form.py inspect form.hwpx` |
+
+어떤 글자를 안내 문구로 보고 덮어쓸지는 `scripts/hwpx_form.py`의 `GUIDE_RE`에서 정합니다. 양식마다 쓰는 안내 기호가 다르면 여기에 더합니다.
+
 ## 절차
 1. **양식 구조 보기**: 모든 표의 칸 위치와 글자를 봅니다.
    ```bash
