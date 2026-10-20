@@ -71,3 +71,9 @@ pip install python-hwpx
 ## 한계
 - 병합된 칸이 복잡한 양식은 라벨 오른쪽 칸이 기대와 다를 수 있습니다. 1단계 결과로 위치를 확인하고 주소로 지정하세요.
 - `verified`는 글자가 들어갔는지만 봅니다. 줄바꿈, 글자 크기, 칸 넘침은 4단계 PDF로만 확인할 수 있습니다.
+
+<!-- credits -->
+## 출처와 영감
+- **HWPX 읽기·쓰기**: [airmang/python-hwpx](https://github.com/airmang/python-hwpx)를 그대로 불러 씁니다. 표 칸을 찾고 덮어쓰기를 막고 다시 열어 확인하는 부분은 이 저장소에서 만든 것입니다.
+- **변환과 PDF 확인**: [neolord0/hwp2hwpx](https://github.com/neolord0/hwp2hwpx)(.hwp를 .hwpx로), [LibreOffice](https://www.libreoffice.org/) + [ebandal/H2Orestart](https://github.com/ebandal/H2Orestart)(PDF 변환)를 안내합니다. 각 프로젝트의 라이선스를 따릅니다.
+- 한글 문서를 새로 만들거나 크게 편집하려면 [jkf87/hwpx-skill](https://github.com/jkf87/hwpx-skill), [airmang/hwpx-plugins](https://github.com/airmang/hwpx-plugins)도 함께 보세요.

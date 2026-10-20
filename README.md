@@ -56,6 +56,13 @@ python skills/hwpx-form-fill/scripts/hwpx_form.py fill skills/hwpx-form-fill/exa
 
 `node tests/run.mjs`가 SKILL.md 형식을 검사하고 예시 파일로 스크립트를 실제로 실행합니다. 푸시할 때마다 GitHub Actions가 같은 시험을 돌립니다(위 test 배지).
 
+<!-- credits -->
+## 출처와 영감
+
+- **HWPX 읽기·쓰기**: [airmang/python-hwpx](https://github.com/airmang/python-hwpx)를 그대로 불러 씁니다. 표 칸을 찾고 덮어쓰기를 막고 다시 열어 확인하는 부분은 이 저장소에서 만든 것입니다.
+- **변환과 PDF 확인**: [neolord0/hwp2hwpx](https://github.com/neolord0/hwp2hwpx)(.hwp를 .hwpx로), [LibreOffice](https://www.libreoffice.org/) + [ebandal/H2Orestart](https://github.com/ebandal/H2Orestart)(PDF 변환)를 안내합니다. 각 프로젝트의 라이선스를 따릅니다.
+- 한글 문서를 새로 만들거나 크게 편집하려면 [jkf87/hwpx-skill](https://github.com/jkf87/hwpx-skill), [airmang/hwpx-plugins](https://github.com/airmang/hwpx-plugins)도 함께 보세요.
+
 ## 만든 사람
 
 **리도**, AI 좌충우돌 실습 중인 20년차 엔지니어입니다. 매일 AI에게 일을 맡기다가 막힌 부분을 고쳐 가며 이 스킬을 만들었습니다.
@@ -68,5 +75,8 @@ python skills/hwpx-form-fill/scripts/hwpx_form.py fill skills/hwpx-form-fill/exa
 ## English
 
 Fill Hangul (HWPX) form tables by label without Hancom Office, refuse to overwrite filled cells, re-open the file to verify, and fail loudly on missing or ambiguous labels.
+
+**Credits.**
+- Uses [airmang/python-hwpx](https://github.com/airmang/python-hwpx) for HWPX I/O; label lookup, overwrite guard and verification are original. Points to [hwp2hwpx](https://github.com/neolord0/hwp2hwpx), [LibreOffice](https://www.libreoffice.org/) and [H2Orestart](https://github.com/ebandal/H2Orestart). For authoring whole documents see [jkf87/hwpx-skill](https://github.com/jkf87/hwpx-skill) and [airmang/hwpx-plugins](https://github.com/airmang/hwpx-plugins).
 
 Install: `/plugin marketplace add reedodev/hwpx-form-fill` then `/plugin install hwpx-form-fill@hwpx-form-fill`, or copy `skills/hwpx-form-fill` into `~/.claude/skills/`. See [SKILL.md](skills/hwpx-form-fill/SKILL.md) for the full procedure. MIT License; third-party models, fonts and libraries keep their own licenses.
