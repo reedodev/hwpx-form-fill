@@ -24,6 +24,7 @@ Rules the script enforces
 Requires: pip install python-hwpx   (https://github.com/airmang/python-hwpx)
 """
 import json
+import os
 import re
 import sys
 import warnings
@@ -135,11 +136,22 @@ def fill(src, values_path, dst, force=False):
     return 1 if bad else 0
 
 
+def need_file(path, what):
+    if not os.path.isfile(path):
+        print(f"Error: {what} not found: {path}", file=sys.stderr)
+        return False
+    return True
+
+
 def main(argv):
     if len(argv) >= 2 and argv[0] == "inspect":
+        if not need_file(argv[1], "form file"):
+            return 2
         inspect(argv[1])
         return 0
     if len(argv) >= 4 and argv[0] == "fill":
+        if not (need_file(argv[1], "form file") and need_file(argv[2], "values file")):
+            return 2
         return fill(argv[1], argv[2], argv[3], force="--force" in argv)
     print(__doc__)
     return 2

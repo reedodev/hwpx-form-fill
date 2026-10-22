@@ -22,5 +22,7 @@ fs.writeFileSync(path.join(tmp, 'v2.json'), JSON.stringify({ '성명': '다른 �
 const r2 = run(py, [S, 'fill', out, path.join(tmp, 'v2.json'), path.join(tmp, 'f2.hwpx')]);
 const j2 = JSON.parse(r2.stdout);
 if (!(r2.status === 1 && j2.skipped_filled.length === 1 && j2.missing.length === 1)) fail('overwrite guard failed: ' + r2.stdout);
+const r3 = run(py, [S, 'fill', path.join(tmp, 'nofile.hwpx'), path.join(skill, 'examples', 'values.example.json'), out]);
+if (!(r3.status === 2 && /not found/.test(r3.stderr))) fail('missing file should exit 2 with a short message: ' + r3.status + r3.stderr);
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log('hwpx-form-fill ok: fill by label, verified from disk, refuses overwrite, reports missing');
